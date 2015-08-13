@@ -18,7 +18,9 @@ from django.contrib import admin
 admin.autodiscover()
 
 from django.conf.urls import *
-from mysite.views import hello, current_datetime, hours_ahead
+from mysite.views import hello, current_datetime, hours_ahead, search, search_form
+from books import views
+from contact.views import contact
 '''
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -30,6 +32,9 @@ urlpatterns = patterns('',
     (r'^time/$', current_datetime),
     #('^another-time-page/$', current_datetime),
     (r'^time/plus/(\d{1,2})/$', hours_ahead),
+    (r'^search-form/$', search_form),
+    (r'^search/$', search),
+    (r'^contact/$', contact),
 )
 
 
